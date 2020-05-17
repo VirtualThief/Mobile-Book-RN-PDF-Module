@@ -3,16 +3,14 @@
   "title": "React Native Mobile Book Pdf",
   "version": "1.0.0",
   "description": "TODO",
-  "main": "index.js",
+  "main": "lib\\module\\index.js",
   "files": [
-    "README.md",
-    "android",
-    "index.js",
-    "ios",
-    "react-native-mobile-book-pdf.podspec"
+    "src",
+    "lib"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "bob build"
   },
   "repository": {
     "type": "git",
@@ -34,7 +32,25 @@
     "react-native": ">=0.60.0-rc.0 <1.0.x"
   },
   "devDependencies": {
+    "@react-native-community/bob": "^0.14.2",
+    "@types/react-native": "^0.62.10",
     "react": "^16.9.0",
-    "react-native": "^0.61.5"
-  }
+    "react-native": "^0.61.5",
+    "typescript": "^3.9.2"
+  },
+  "react-native": "src\\index.ts",
+  "module": "lib\\module\\index.js",
+  "types": "lib\\typescript\\src\\index.d.ts",
+  "@react-native-community/bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "module",
+      "typescript"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
 }
